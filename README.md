@@ -1,4 +1,4 @@
-OceanWP Child Theme
+OceanWP Child Theme - "Code Expérience" edited
 =================
 
 Child Theme for the OceanWP WordPress theme.
