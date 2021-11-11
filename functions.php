@@ -28,3 +28,34 @@ function oceanwp_child_enqueue_parent_style() {
 	
 }
 add_action( 'wp_enqueue_scripts', 'oceanwp_child_enqueue_parent_style' );
+
+/**
+ * Add Fonts to OceanWP
+ * /
+// Add custom font to font settings
+function ocean_add_custom_fonts() {
+	return array( '' ); // You can add more then 1 font to the array!
+}
+/* */
+
+/**
+ * Add Font Group to Elementor
+ * /
+add_filter( 'elementor/fonts/groups', 'prefix_elementor_custom_fonts_group', 10, 1 );
+function prefix_elementor_custom_fonts_group( $font_groups ) {
+
+	$font_groups['theme_fonts'] = __( 'Theme Fonts' );
+	return $font_groups;
+}
+/* */
+
+/**
+ * Add Group Fonts to Elementor
+ * /
+add_filter( 'elementor/fonts/additional_fonts', 'prefix_elementor_custom_fonts', 10, 1 );
+function prefix_elementor_custom_fonts( $additional_fonts ) {
+    
+	$additional_fonts[''] = 'theme_fonts'; // You can add more then 1 font to the array!
+	return $additional_fonts;
+}
+/* */
